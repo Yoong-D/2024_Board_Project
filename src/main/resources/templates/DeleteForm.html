@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" th:href="@{/deleteform.css}">
+    <title>게시글 삭제 폼</title>
+</head>
+<body>
+<header>
+    <h1>Delete Board</h1>
+</header>
+
+<section>
+    <form th:action="@{/delete}" method="post" th:object="${board}">
+        <input type="hidden" th:field="*{id}" />
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" th:field="*{password}" />
+        <!--비밀번호가 일치하지 않을시 나타날 메시지 출력-->
+        <div th:if="${message}" th:text="${message}" style="color: red;"></div>
+        <button type="submit">삭제</button>
+    </form>
+</section>
+<footer>
+    <p>@게시판 만들기 프로젝트</p>
+    <p>2024.05.23 ~ 2024.05.24</p>
+    <p>GitHub : github.com/Yoong-D/</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+header {
+    padding: 10px 20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+header h2 {
+    font-size: 2rem;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+section div {
+    background: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section strong {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+section a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: lightskyblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+section a:hover {
+    background-color: black;
+}
+#menu {
+    text-align: center;
+}
+
+#menu a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: skyblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#menu a:hover {
+    background-color: black;
+}
+
+/* 푸터 스타일 - 맨 아래 고정*/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+}

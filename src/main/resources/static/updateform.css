@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto; /* 수평 가운데 정렬 */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+input {
+    width: calc(100% - 12px); /* 입력 필드 너비 설정 */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+/* 푸터 스타일 - 맨 아래 고정*/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 10px;
+}

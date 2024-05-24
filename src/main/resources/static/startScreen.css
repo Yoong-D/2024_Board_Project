@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+header{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h1{
+    color : black;
+    font-size: 81px;
+}
+.image{
+    height:30rem;
+    margin-bottom: 1rem;
+    background-image: url("main.jpg");
+    background-size: cover;
+    background-position: center;
+}
+button {
+    bottom: 5rem;
+    background-color: #f4f4f4;
+    color: black;
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    border: none;
+}
+
+button:hover {
+    color: blue; /* Changing background color on hover */
+}

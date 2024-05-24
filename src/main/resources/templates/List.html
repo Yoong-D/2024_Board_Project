@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" th:href="@{/board.css}">
+    <title>게시글 목록</title>
+</head>
+<body>
+<header>
+    <h1>Board List</h1>
+</header>
+<br>
+<section class ="explain">
+    <p>여행의 순간을 기록하고 공유하는 공간, 트래블 로그에 오신 것을 환영합니다!</p>
+    <p>이곳은 전 세계를 탐험하며 경험한 소중한 기억과 특별한 이야기를 나누는 커뮤니티입니다.</p>
+</section>
+
+<br>
+<br>
+<section>
+    <table th:if="${!board.empty}">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Create At</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 리스트에 있는 값을 하나씩 꺼내오기 -->
+        <tr th:each="board : ${board}">
+            <td th:text="${board.id}">아이디</td>
+            <td th:text="${board.name}">이름</td>
+            <!-- 글 제목 클릭시 /veiw?id=아이디로 이동 -->
+            <!--           예전거 <td th:text="${board.title}">글 제목</td>-->
+            <td>
+                <a th:href="@{/view(id=${board.id})}" th:text="${board.title}"></a>
+            </td>
+            <td th:text="${#temporals.format(board.createdAt,'yyyy-MM-dd')}">글 등록 날짜</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<!--테이블에 값이 존재할때만 해당 항목 출력-->
+
+<section>
+    <div class="parent">
+        <a id = "write" th:href="@{/writeform}">글쓰기</a>
+    </div>
+</section>
+
+<section>
+    <!--페이징 처리 부분-->
+    <!--board 변수가 null이 아닌가? && borad 리스트가 비어있지 않은가?? and 연산-->
+    <div class = "page" th:if="${board != null and not #lists.isEmpty(board)}">
+        <ul id="pageNumber">
+            <!-- #numbers.sequence : 시작 숫자와 끝 숫자 사이의 시퀀스를 생성 (1 ~ 마지막 페이지수)-->
+            <li th:each="i : ${#numbers.sequence(1, board.totalPages)}">
+                <a id = "title" th:href="@{/list(page=${i})}" th:text="${i}"></a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>@게시판 만들기 프로젝트</p>
+    <p>2024.05.23 ~ 2024.05.24</p>
+    <p>GitHub : github.com/Yoong-D/</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" th:href="@{/viewform.css}">
+    <title>게시글 상세 조회</title>
+</head>
+<body>
+<header>
+    <h2 th:text="${board.title}"> </h2>
+</header>
+<section>
+    <strong>작성자</strong>
+    <div>
+        <p th:text="${board.name}"></p>
+    </div>
+    <strong>내용</strong>
+    <div>
+        <p th:text="${board.content}"></p>
+    </div>
+    <strong>작성 일자</strong>
+    <div>
+        <p th:text="${#temporals.format(board.createdAt,'yyyy-MM-dd HH:mm')}"></p>
+    </div>
+</section>
+<section id  = "menu">
+    <a th:href="@{/list}">List</a>
+    <a th:href="@{/updateform(id=${board.id})}">Edit</a>
+    <a th:href="@{/deleteform(id=${board.id})}">Delete</a>
+</section>
+<footer>
+    <p>@게시판 만들기 프로젝트</p>
+    <p>2024.05.23 ~ 2024.05.24</p>
+    <p>GitHub : github.com/Yoong-D/</p>
+</footer>
+</body>
+</html>

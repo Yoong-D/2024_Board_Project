@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" th:href="@{/updateform.css}">
+    <title>게시글 등록 폼</title>
+</head>
+<body>
+<header>
+    <h1>Create a New Board</h1>
+</header>
+
+<section>
+    <form th:action="@{/write}" method="post" th:object = "${board}">
+        <label for = "name">작성자</label>
+        <input type = "text" id="name" th:field="*{name}" required/>
+        <label for = "title">제목</label>
+        <input type = "text" id="title" th:field="*{title}" required/>
+        <label for = "contect">내용</label>
+        <input type = "text" id="contect" th:field="*{content}" required/>
+        <label for = "password">비밀번호</label>
+        <input type = "password" id="password" th:field="*{password}" required/>
+        <button type="submit">게시글 등록</button>
+    </form>
+</section>
+
+<footer>
+    <p>@게시판 만들기 프로젝트</p>
+    <p>2024.05.23 ~ 2024.05.24</p>
+    <p>GitHub : github.com/Yoong-D/</p>
+</footer>
+</body>
+
+</html>
