@@ -8,26 +8,39 @@
 
 ## 💡 구현 모습
    ### 기본 페이지(/)
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/4d8a937a-dc91-4388-b048-40ffa2790801)
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/82911e99-21f9-4293-943f-cf58868d486d)
+
 
    ### 목록 페이지(/list?page=페이지번호)
-![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/828f159a-f846-43d1-9bee-0410a1dad048)
+![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/7fa4b2e8-0fe5-4ce6-98c4-b2cbca4ef926)
+
 
 
    ### 게시글 상세 조회 페이지(/view?id=아이디)
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/4220b169-5d49-486c-9445-73eb7835753d)
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/b30b318f-9bfe-42c1-b804-4d440403b98d)
+
 
    ### 게시글 등록 페이지(/writeform)
-![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/b134f2d4-c2e3-4079-9cd4-b64901d2fa1a)
-
+![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/aebe8a1a-26e3-4048-a4e2-0e4529aceba1)
 
    ### 게시글 삭제 페이지(/deleteform?id=아이디)
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/9803d854-ffa0-416a-9993-7d080567abbf)
-    ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/249e09eb-bd3d-4e53-9c31-ae3867121600)
+![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/ca14c225-a068-4303-9eb7-8135fdc86f1d)
+![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/9ed7396b-b6cb-4ac2-86a4-f3fc64e4d6a2)
+![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/752b3c5e-ff38-44b9-9ad3-e8f10e06206a)
+
+
 
    ### 게시글 수정 페이지(/updateform?id=아이디)
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/6a64a83a-7026-45f1-afc4-ee1a717350e2)
-  ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/f0602e17-5994-44e4-b258-75082107c241)
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/6893d2ec-5780-49bc-b54f-fd50a950c8df)
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/08817a08-c047-4098-8d30-d09742ef7910)
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/cee4a14f-3f01-42f2-8bb3-54a8fef8a655)
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/67a51846-d940-4824-8905-4b0f46d2c49f)
+
+
+
+
+
+
 ## 📢 프로젝트 소감 & 개선할 점
 ### ❤ 소감
 
