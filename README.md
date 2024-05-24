@@ -65,6 +65,19 @@ updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 수
 
 ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/aebe8a1a-26e3-4048-a4e2-0e4529aceba1)
 
+
+   ### 게시글 수정 페이지(/updateform?id=아이디)
+
+  ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/6893d2ec-5780-49bc-b54f-fd50a950c8df)
+   [ 수정 중인 게시 글  - 제목을 물놀이 축제 -> 물놀이 축제 안내]  
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/08817a08-c047-4098-8d30-d09742ef7910)
+   [ 비밀번호가 올바르지 않을 시 "비밀번호가 일치하지 않습니다" 경고 문구 출력 ]   
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/cee4a14f-3f01-42f2-8bb3-54a8fef8a655)
+   [ 비밀번호가 올바를 시 해당 게시글이 수정된 모습  - 상세 페이지 ]   
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/67a51846-d940-4824-8905-4b0f46d2c49f)
+   [ 비밀번호가 올바를 시 해당 게시글이 수정된 모습 - 목록 페이지 ] 
+
+
    ### 게시글 삭제 페이지(/deleteform?id=아이디)
    - 사용자는 암호를 입력하고, 확인 버튼을 클릭하여 삭제 요청
    - 올바른 암호시 /delete로 요청을 보내 삭제 후 /list로 다이렉트
@@ -74,20 +87,7 @@ updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 수
 ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/9ed7396b-b6cb-4ac2-86a4-f3fc64e4d6a2)
 [ 비밀번호가 올바르지 않을 시 "비밀번호가 일치하지 않습니다" 경고 문구 출력 ]    
 ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/752b3c5e-ff38-44b9-9ad3-e8f10e06206a)
-[ 비밀번호가 올바를 시 해당 게시글이 삭제된 모습 ] 
-
-
-
-   ### 게시글 수정 페이지(/updateform?id=아이디)
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/6893d2ec-5780-49bc-b54f-fd50a950c8df)
-   [ 수정 하기 전 게시 글  ]  
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/08817a08-c047-4098-8d30-d09742ef7910)
-   [ 비밀번호가 올바르지 않을 시 "비밀번호가 일치하지 않습니다" 경고 문구 출력 ]   
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/cee4a14f-3f01-42f2-8bb3-54a8fef8a655)
-   [ 비밀번호가 올바를 시 해당 게시글이 수정된 모습  - 상세 페이지 ]   
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/67a51846-d940-4824-8905-4b0f46d2c49f)
-   [ 비밀번호가 올바를 시 해당 게시글이 삭제된 모습 - 목록 페이지 ] 
-
+[ 비밀번호가 올바를 시 해당 게시글이 삭제된 모습 - 물놀이 축제 안내 게시글 삭제 ] 
 
 ## 📢 프로젝트 소감 & 개선할 점
 ### ❤ 소감
