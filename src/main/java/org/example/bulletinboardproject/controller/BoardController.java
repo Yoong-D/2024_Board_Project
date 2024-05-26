@@ -1,6 +1,7 @@
 package org.example.bulletinboardproject.controller;
 
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.bulletinboardproject.domain.Board;
 import org.example.bulletinboardproject.service.BoardService;
@@ -9,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +24,7 @@ import java.util.List;
 public class BoardController {
     private final BoardService boardService;
 
-    // 기본 화면
+    // 기본 화면 - travel log
     @GetMapping("/")
     public String BoardStart(){
         return "BoardStart";
@@ -73,14 +75,20 @@ public class BoardController {
 
     // 게시글 삭제 폼- POST : 게시글 삭제하기
     @PostMapping("/delete")
-    public String boardDeleteForm(@ModelAttribute Board board, Model model) {
-        if (boardService.verifyPassword(board.getId(), board.getPassword())) {
-            boardService.deleteById(board.getId());
-            return "redirect:/list";
-        } else {
-            model.addAttribute("message", "비밀번호가 일치하지 않습니다.");
-            model.addAttribute("board", board); // 다시 해당 객체 폼으로 돌아가기
+    public String boardDeleteForm(@Valid @ModelAttribute Board board, BindingResult bindingResult, Model model) {
+        // 비밀번호가 조건을 만족하는지 않으면 다시 수정 폼으로 이동
+        if(bindingResult.hasErrors()){
             return "DeleteForm";
+        }
+        else{
+            if (boardService.verifyPassword(board.getId(), board.getPassword())) {
+                boardService.deleteById(board.getId());
+                return "redirect:/list";
+            } else {
+                model.addAttribute("message", "비밀번호가 일치하지 않습니다.");
+                model.addAttribute("board", board); // 다시 해당 객체 폼으로 돌아가기
+                return "DeleteForm";
+            }
         }
     }
 
@@ -94,17 +102,22 @@ public class BoardController {
 
     // 게시글 수정 폼 - POST : 게시글 수정하기
     @PostMapping("/update")
-    public String boardUpdateForm(@ModelAttribute Board board, Model model) {
-        // 비밀번호가 일치하면 리다이렉트
-        if (boardService.verifyPassword(board.getId(), board.getPassword())) {
-            boardService.update(board);
-            // 해당 글의 id를 함께 전달하여 리다이렉트
-            return "redirect:/view?id=" + board.getId();
-        } else {
-            // 비밀번호가 일치하지 않으면 다시 수정 폼으로 돌아가기
-            model.addAttribute("message", "비밀번호가 일치하지 않습니다.");
-            model.addAttribute("board", board); // 다시 해당 객체 폼으로 돌아가기
+    public String boardUpdateForm(@Valid @ModelAttribute Board board, BindingResult bindingResult, Model model) {
+        // 비밀번호가 조건을 만족하는지 않으면 다시 수정 폼으로 이동
+        if(bindingResult.hasErrors()){
             return "UpdateForm";
+        }else{
+            // 비밀번호가 일치하면 리다이렉트
+            if (boardService.verifyPassword(board.getId(), board.getPassword())) {
+                boardService.update(board);
+                // 해당 글의 id를 함께 전달하여 리다이렉트
+                return "redirect:/view?id=" + board.getId();
+            } else {
+                // 비밀번호가 일치하지 않으면 다시 수정 폼으로 돌아가기
+                model.addAttribute("message", "비밀번호가 일치하지 않습니다.");
+                model.addAttribute("board", board); // 다시 해당 객체 폼으로 돌아가기
+                return "UpdateForm";
+            }
         }
     }
 }

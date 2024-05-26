@@ -32,9 +32,9 @@ button {
     color: black;
     padding: 12px 35px;
     font-size: 1.2rem;
-    border: none;
+    border: 1px solid black;
 }
 
 button:hover {
-    color: blue; /* Changing background color on hover */
+    color: skyblue; /* Changing background color on hover */
 }

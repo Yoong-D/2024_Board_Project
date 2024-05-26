@@ -13,10 +13,13 @@
 </header>
 
 <section>
+
     <form th:action="@{/delete}" method="post" th:object="${board}">
         <input type="hidden" th:field="*{id}" />
         <label for="password">비밀번호</label>
         <input type="password" id="password" th:field="*{password}" />
+        <!--비밀번호  조건에 맞지 않을시 나타날 메시지 출력 -->
+        <div th:if="${#fields.hasErrors('password')} and ${message} == null"   th:errors="*{password}" style="color: red;"></div>
         <!--비밀번호가 일치하지 않을시 나타날 메시지 출력-->
         <div th:if="${message}" th:text="${message}" style="color: red;"></div>
         <button type="submit">삭제</button>
