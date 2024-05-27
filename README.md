@@ -1,7 +1,7 @@
 # 게시판 만들기  프로젝트
 ##### 프로젝트 진행 기간 : 2024.05.23 ~ 2024.05.24 (단독) 
 ##### IDE : Intellij Professional
-##### Famework : Spring boot 6.1.6
+##### Famework : Spring 6.1.6
 ##### dependencies : Spring Boot DevTools, Lombok, Spring Web, Spring Data JDBC, Thymeleaf, Validation
 ##### Language : Java 21, Html 5, CSS
 ##### Database : Mysql 8.4.0
