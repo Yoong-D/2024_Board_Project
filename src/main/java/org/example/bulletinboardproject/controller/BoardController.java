@@ -104,6 +104,7 @@ public class BoardController {
     @PostMapping("/update")
     public String boardUpdateForm(@Valid @ModelAttribute Board board, BindingResult bindingResult, Model model) {
         // 비밀번호가 조건을 만족하는지 않으면 다시 수정 폼으로 이동
+        System.out.println("createdAt :   " + board.getCreatedAt());
         if(bindingResult.hasErrors()){
             return "UpdateForm";
         }else{

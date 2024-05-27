@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-
 public class Board {
     @Id
     private Long id;
@@ -25,6 +24,7 @@ public class Board {
     private String title;
     private String content;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
     @NotNull(message = "비밀번호를 입력해주세요.")
     @Size(min = 2, max = 14, message = "2글자 이상 14글자 이하로 입력해주세요.")
     private String password;

@@ -21,14 +21,6 @@ public class BoardService {
     private final BoardRepository boardRepository;
 
     // 목록 보기 메서드 - 페이징 처리
-//    public List<Board> findPaginated(Pageable pageable){
-//        // 페이징 처리 - 최신글을 기준으로 내림차순
-//        Pageable sortedByDescDate = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize()
-//        , Sort.by(Sort.Direction.DESC,"createdAt"));
-//        Page<Board> boardPage = boardRepository.findAll(sortedByDescDate);
-//        return boardPage.getContent();
-//
-//    }
     public Page<Board> findPaginated(int page, int size){
 
         // 페이지 객체 생성 - 최신글을 기준으로 내림차순하며 0번부터 시작하며, 한 페이지당 5개씩
@@ -50,7 +42,6 @@ public class BoardService {
     public void saveBorad(Board board) {
         // 글을 등록한 시간 설정
        board.setCreatedAt(LocalDateTime.now());
-
         save(board);
     }
     // 글 쓰기 메서드2 - 글 등록하기
@@ -62,7 +53,10 @@ public class BoardService {
     // 글 수정 메서드
     @Transactional
     public void update(Board board) {
-        board.setCreatedAt(LocalDateTime.now());
+        // 글 수정한 시간
+        board.setUpdatedAt(LocalDateTime.now());
+        //  기존 생성 시간을 가져와 다시 설정
+        board.setCreatedAt(boardRepository.findById(board.getId()).orElse(null).getCreatedAt());
         boardRepository.save(board);
     }
 

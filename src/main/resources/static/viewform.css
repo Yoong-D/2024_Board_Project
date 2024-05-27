@@ -22,7 +22,7 @@ header h2 {
 }
 
 section {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 section div {
@@ -65,6 +65,7 @@ section a:hover {
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    margin-bottom: 60px;
 }
 
 #menu a:hover {
@@ -82,4 +83,9 @@ footer {
     text-align: center;
     padding: 10px 0;
     border-top: 1px solid #444;
+}
+
+footer p {
+    margin: 2px 0;
+    font-size: 12px;
 }

@@ -16,13 +16,20 @@
     <div>
         <p th:text="${board.name}"></p>
     </div>
+    <br>
     <strong>내용</strong>
     <div>
         <p th:text="${board.content}"></p>
     </div>
+    <br>
     <strong>작성 일자</strong>
     <div>
         <p th:text="${#temporals.format(board.createdAt,'yyyy-MM-dd HH:mm')}"></p>
+    </div>
+    <br>
+    <strong>최종 수정 일자</strong>
+    <div>
+        <p th:text="${#temporals.format(board.updatedAt,'yyyy-MM-dd HH:mm')}"></p>
     </div>
 </section>
 <section id  = "menu">

@@ -10,6 +10,9 @@ body {
     background-color: #f4f4f4;
     padding: 20px;
 }
+section {
+    margin-bottom: 40px;
+}
 a {
     color: #337ab7;
     text-decoration: none;
@@ -70,6 +73,6 @@ footer {
 }
 
 footer p {
-    margin: 5px 0;
-    font-size: 10px;
+    margin: 2px 0;
+    font-size: 12px;
 }

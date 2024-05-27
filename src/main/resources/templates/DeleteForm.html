@@ -13,7 +13,6 @@
 </header>
 
 <section>
-
     <form th:action="@{/delete}" method="post" th:object="${board}">
         <input type="hidden" th:field="*{id}" />
         <label for="password">비밀번호</label>
