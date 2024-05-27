@@ -1,12 +1,12 @@
 # 게시판 만들기  프로젝트
 ##### 프로젝트 진행 기간 : 2024.05.23 ~ 2024.05.24 (단독) 
 ##### IDE : Intellij Professional
-##### Famework : Spring boot 
-##### dependencies : Spring Boot DevTools, Lombok, Spring Web, Spring Data JDBC, Thymeleaf
+##### Famework : Spring boot 6.1.6
+##### dependencies : Spring Boot DevTools, Lombok, Spring Web, Spring Data JDBC, Thymeleaf, Validation
 ##### Language : Java 21, Html 5, CSS
 ##### Database : Mysql 8.4.0
 
-## 📑 사용 설명서  
+## 사용 설명서  
    ### Board 테이블 구조 
    - 데이터 베이스 명 : boardproject
 ```
@@ -41,23 +41,28 @@ updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 수
 ### 글 삭제
  - 암호는 글 등록시 입력했던 암호와 동일해야 삭제 가능  
    (암호는 2글자 이상 14글자 이하로 반드시 입력해야한다.)
-## 💡 구현 모습
-   ### 기본 페이지(/)
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/82911e99-21f9-4293-943f-cf58868d486d)
+
+   
+## 구현 모습
+   ### 기본 페이지(/)  
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/514743b2-eaba-41ef-a022-7d886e0a83d6)
+
 
 
    ### 목록 페이지(/list?page=페이지번호)
    - 게시글 목록을 페이지별로 나열
    - page 파라미터가 없으면 기본적으로 1페이지를 보여준다.
-   - 각 페이지는 최신 글 부터 보여지며, 페이징 처리가 적용되어 있다.
-![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/7fa4b2e8-0fe5-4ce6-98c4-b2cbca4ef926)
+   - 각 페이지는 최신 글 부터 보여지며, 페이징 처리가 적용되어 있다.  
+![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/69ae3238-4c0a-4fe3-9697-e5fe472c8997)
+
 
 
 
    ### 게시글 상세 조회 페이지(/view?id=아이디)
    - 목록 페이지에서 보고싶은 게시글의 제목을 클릭하면 들어오는 화면
-   - 삭제와 수정 링크를 제공하여, 해당 기능을 수행할 수 있는 페이지로  이동 가능
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/b30b318f-9bfe-42c1-b804-4d440403b98d)
+   - 삭제와 수정 링크를 제공하여, 해당 기능을 수행할 수 있는 페이지로  이동 가능  
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/bbb9b726-58ad-459b-a598-224337470b09)
+
 
 
    ### 게시글 등록 페이지(/writeform)
@@ -81,11 +86,13 @@ updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 수
 
    
    **비밀번호가 올바를 시 해당 게시글이 수정된 모습  - 상세 페이지** 
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/cee4a14f-3f01-42f2-8bb3-54a8fef8a655)
+  ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/f2315763-3a85-46d3-ab88-4a3ba080b60b)
+
 
    
    **비밀번호가 올바를 시 해당 게시글이 수정된 모습 - 목록 페이지**
-   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/67a51846-d940-4824-8905-4b0f46d2c49f)
+   ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/32065c31-6a68-48df-b057-0f7d3d6477ac)
+
 
    
    
@@ -112,14 +119,15 @@ updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 수
 
 
       **비밀번호가 올바를 시 해당 게시글이 삭제된 모습 - 물놀이 축제 안내 게시글 삭제**
-      ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/752b3c5e-ff38-44b9-9ad3-e8f10e06206a)
+      ![image](https://github.com/Yoong-D/2024_Board_Project/assets/52689951/c563025d-b67e-43f2-ac9d-3778497c7145)
 
 
-## 📢 프로젝트 소감 & 개선할 점
-### ❤ 소감
+
+## 프로젝트 소감 & 개선할 점
+### 소감
 첫 스프링 부트 프로젝트를 무사히 완성해서 정말 뿌듯하다. 많은 에노테이션과 용어들 덕분에 처음에는 스프링이 조금 어려웠지만, 그래도 최소한의 목표를 이룰 수 있어서 다행이다. 프로젝트를 진행하면서 타임 리프 문법에서 많은 오류가 발생했는데, 이를 해결하면서 동적으로 페이지가 변경되고 바뀌는 과정, 그리고 MVC의 구조에 대해 더 깊게 이해할 수 있었다. 예전에는 페이징을 구현하는 것이 정말 어려웠는데, 이번에는 스프링 부트를 활용하여 매우 간단하게 구현할 수 있다는 방법을 배우게 되어 뿌듯하다.
 
-### ❤ 개선 및 추가할 점 
+### 개선 및 추가할 점 
 ~~1. 비밀번호에 제약 조건 두기~~ -> 24.05.26 (비밀번호는 2글자 이상 14글자 이하로 반드시 입력해야 한다.)    
 2. 삭제 폼과 수정폼 ui 수정    
 3. 카테고리 만들기    
